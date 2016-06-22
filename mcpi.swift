@@ -20,7 +20,7 @@ app (file o) calc_pi (file pi_script, int num_throws)
 
 app (file o) analyze (file stats_script, file s[])
 {
-  stats filenames(s) stdout=filename(o);
+  bash filename(stats_script) filenames(s) stdout=filename(o);
 }
 
 # ----- WORKFLOW ELEMENTS ------#
