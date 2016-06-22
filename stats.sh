@@ -14,6 +14,6 @@ awk '
 
 { sum += $1}
 
-END { printf("%.3f\n",sum/NR) }
+END { printf("%.8f\n",sum/NR) }
 ' $*
 log 1>&2
