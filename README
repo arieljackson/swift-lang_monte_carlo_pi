@@ -1,0 +1,6 @@
+Calculates pi using the monte carlo estimation of pi.
+To learn more about this estimation, visit
+http://polymer.bu.edu/java/java/montepi/MontePi.html
+
+Using a python script that calculates one estimation, we repeat X times
+using swift-lang parallel scripting.
