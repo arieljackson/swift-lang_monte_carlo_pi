@@ -4,3 +4,11 @@ http://polymer.bu.edu/java/java/montepi/MontePi.html
 
 Using a python script that calculates one estimation, we repeat X times
 using swift-lang parallel scripting.
+
+mcpi.py - actually calculates pi using monte carlo estimation, with given number of throws as a command line arg
+mcpi.sh - invokes mcpi.py using shell script, with command line arg
+mcpi.swift - should run mcpi.sh 10 different times, generating 10 output files, then use stats.sh to average those
+swift.conf - configure swift settings
+
+
+
