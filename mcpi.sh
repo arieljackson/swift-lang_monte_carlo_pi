@@ -1,2 +1,2 @@
 #!/bin/sh
-python mcpi.py $1
+python /core/swift-lang_monte_carlo_pi/mcpi.py $1
