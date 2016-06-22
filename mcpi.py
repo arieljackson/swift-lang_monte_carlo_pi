@@ -14,7 +14,7 @@ def calculate_pi(throws):
         x, y = random.random(), random.random()
         if (((0.5 - x) ** 2) + ((0.5 - y) ** 2)) <= 0.25:
             inside += 1
-    return (4 * inside) / throws
+    return (4.0 * inside) / throws
 
 if __name__ == '__main__':
     print calculate_pi(num_throws)
