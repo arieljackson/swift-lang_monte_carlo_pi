@@ -1,11 +1,11 @@
-
+import "stdlib.v2";
 type file;
 
 # ------ INPUTS / OUTPUTS -------#
 
 //int throws   = 5000;
-int throws   = toInt(arg("throws","5000")); 
-int nsims   = toInt(arg("nsims", "10")); 
+int throws   = parseInt(arg("throws","5000")); 
+int nsims   = parseInt(arg("nsims", "10")); 
  
 file out 			<"average.out">;
 file mcpi_script	<"mcpi.sh">;
@@ -27,11 +27,14 @@ app (file o) analyze (file stats_script, file s[])
 # ----- WORKFLOW ELEMENTS ------#
 
 file sims[];
+float nums[];
 
-foreach i in [0:10] { /* can change to nsims later */
+foreach i in [0:nsims-1] { /* can change to nsims later */
   file simout <single_file_mapper; file=strcat("output/sim_",i,".out")>;
   simout = calc_pi(mcpi_script, throws);
   sims[i] = simout;
+  nums[i] = read(sims[i]);
 }
 
-out = analyze(stats_script,sims);
+//out = analyze(stats_script,sims);
+ out = write(avg(nums));
