@@ -5,7 +5,7 @@ type file;
 
 //int throws   = 5000;
 int throws   = toInt(arg("throws","5000")); 
-int nsims   = toInt(arg("nsims", "50")); 
+int nsims   = toInt(arg("nsims", "10")); 
  
 file out 			<"average.out">;
 file mcpi_script	<"mcpi.sh">;
