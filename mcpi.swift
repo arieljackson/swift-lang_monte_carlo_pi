@@ -7,8 +7,8 @@ type file;
 int throws   = parseInt(arg("throws","5000")); 
 int nsims   = parseInt(arg("nsims", "100")); 
  
-file out 			<"average.out">;
-file pic <"hello.png">;
+file out <"average.out">;
+file pic <"pi.png">;
 file mcpi_script	<"mcpi.sh">;
 file stats_script	<"stats.sh">;
 file viz_script <"viz.sh">;

@@ -10,7 +10,8 @@ arglen = len(argv)
 avg = float(argv[1])
 
 # set up the figure
-fig = plt.figure()
+with plt.xkcd():
+    fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.set_xlim(3.075,3.2)
 ax.set_ylim(0,10)
@@ -66,4 +67,4 @@ ax.yaxis.set_visible(False)
 #ax.set_xticklabels(empty_string_labels)
 # draw a point on the
 if __name__ == '__main__':
-    plt.savefig("hello.png")
+    plt.savefig("pi.png")
