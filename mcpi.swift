@@ -4,21 +4,22 @@ type file;
 # ------ INPUTS / OUTPUTS -------#
 
 //int throws   = 5000;
-int throws   = parseInt(arg("throws","5000")); 
+int throws   = parseInt(arg("throws","30")); 
 int nsims   = parseInt(arg("nsims", "100")); 
  
 file out <"average.out">;
 file pic <"pi.png">;
-file mcpi_script	<"mcpi.sh">;
+file mcpi_script	<"mcpi.py">;
 file stats_script	<"stats.sh">;
-file viz_script <"viz.sh">;
+file viz_script <"viz.py">;
 
 
 # ------- APP DEFINITIONS -------#
 
+
 app (file o) calc_pi (file pi_script, int num_throws)
 {
-  bash filename(pi_script) num_throws stdout=filename(o);
+  python filename(pi_script) num_throws stdout=filename(o);
 }
 
 app (file o) analyze (file stats_script, file s[])
@@ -28,7 +29,7 @@ app (file o) analyze (file stats_script, file s[])
 
 app (file o) visualize (file viz_script, float av, file s[])
 {
-  bash filename(viz_script) av filenames(s);
+  python filename(viz_script) av filenames(s);
 }
 
 # ----- WORKFLOW ELEMENTS ------#
